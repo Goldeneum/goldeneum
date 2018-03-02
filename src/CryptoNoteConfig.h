@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016-2017 BXC developers
-// Copyright (c) 2017 UltraNote developers
+// Copyright (c) 2018 Goldeneum developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +30,7 @@ const uint64_t CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE           = 10;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 30;
 
 
-const uint64_t MONEY_SUPPLY				     = UINT64_C(18409869056000000000);
+const uint64_t MONEY_SUPPLY				     = UINT64_C(18409869000000000);
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
@@ -98,13 +98,13 @@ const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "blockchainindice
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150) * parameters::COIN);
-const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(18446744073) * parameters::COIN); // 18.4 billion ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(1500) * parameters::COIN);
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(50) * parameters::COIN);
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(18446744) * parameters::COIN); // 18.4 million ICO
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(500) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Goldeneum";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000180a3c347029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101954b23a6fedf6eea4a7fd8b5e6bbb705ddfc4b0d619d921cafa4acd627dff814";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 const uint32_t GENESIS_NONCE                                 = 70;
 const uint64_t GENESIS_TIMESTAMP                             = 1496764095;
 
@@ -119,8 +119,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              = 17236;
-const int      RPC_DEFAULT_PORT                              = 18236;
+const int      P2P_DEFAULT_PORT                              = 1700;
+const int      RPC_DEFAULT_PORT                              = 1800;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -138,13 +138,13 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "0000000000000000000000000000000000000000000000000000000111111111";
 
 const std::initializer_list<const char*> SEED_NODES = {
-	"seed1.goldeneum.org:17236",
-	"seed2.goldeneum.org:17236",
-	"back1.goldeneum.org:17236",
-	"back2.goldeneum.org:17236",
-	"back3.goldeneum.org:17236",
-	"seed1.goltalk.com:17236",
-	"seed2.goltalk.com:17236"
+	"seed1.goldeneum.org:1700",
+	"seed2.goldeneum.org:1700",
+	"back1.goldeneum.org:1700",
+	"back2.goldeneum.org:1700",
+	"back3.goldeneum.org:1700",
+	"seed1.goltalk.com:1700",
+	"seed2.goltalk.com:1700"
 };
 
 struct CheckpointData {
@@ -160,10 +160,6 @@ __attribute__((unused))
 // You may add here other checkpoints using the following format:
 // {<block height>, "<block hash>"},
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
- { 3700, "34126fea8a0168a41885358fa1f3d793a3a6d28e650da6cc9bc2de9d6ad5fc24" }, 
- { 9900, "15f3ecbb6324991c653ceed03619a735b40142d1b4777161593510f0f1d1a098" },
- { 22000, "8d444f19cc5cd46738583a001135a72b5824aa380e5006f422108eb50d9b9cca" },
- { 33000, "4e8958bcf1673bc326d6285c5f3df256f2c48c7ff85db7ef13637421a561e70e" },
 };
 
 // {BlockIndex , Version}
@@ -173,7 +169,6 @@ const std::map<const uint32_t, const uint8_t> Version = {
 
 // {BlockIndex , Hash}
 const std::map<const uint32_t, const char*> VersionCheck = {
-    {34147, "cdc7e1b2bb3df0d48d271b7f8429a847ca661a112ce5ed5898b429983e257082"}
 };
 
 } // CryptoNote
